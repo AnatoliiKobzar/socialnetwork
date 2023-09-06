@@ -1,12 +1,22 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-  id: { type: String, require: true },
-  username: { type: String, require: true, unique: true },
-  name: { type: String, require: true },
+  id: {
+    type: String,
+    required: true,
+  },
+  username: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
   image: String,
   bio: String,
-  theards: [
+  threads: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Thread',
