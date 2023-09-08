@@ -13,7 +13,7 @@ export const metadata = {
   description: 'A Next.js 13 Meta PeopleLink App',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider>
       <html lang="en">
