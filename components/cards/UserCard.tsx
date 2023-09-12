@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 interface Props {
   id: string;
@@ -25,10 +26,16 @@ const UserCard = ({ id, name, username, imgUrl, personType }: Props) => {
           <p className="text-small-medium text-gray-1">@{username}</p>
         </div>
       </div>
-
-      <Button className="user-card_btn" onClick={() => router.push(`/profile/${id}`)}>
-        View
-      </Button>
+      <motion.div
+        className="box"
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+      >
+        <Button className="user-card_btn" onClick={() => router.push(`/profile/${id}`)}>
+          View
+        </Button>
+      </motion.div>
     </article>
   );
 };
